@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .bg-logo {
+    -webkit-mask-image: url(../assets/icones/menu.svg);
+    mask-image: url(../assets/icones/menu.svg);
+  }
+  .raios {
+    background-image: url(../assets/images/efeitos/efeito_raios.png);
+    background-position-x: center;
+    background-position-y: -65px;
+    margin: 0 -15px;
+    padding: 0 15px;
+  }
+  .bg-curva-topo {
+    background-image: url(../assets/images/curvas/curva_topo_quadro_principal.svg);
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    width: -webkit-fill-available;
+    height: 110px;
+    padding-left: 15px;
+    margin-bottom: 5px;
+    filter: drop-shadow(2px 3px 6px rgba(0, 0, 0, 0.3));
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  color: #fff;
+}
+
+html,
+body {
+  tab-size: 4;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+:root {
+  --cor1: #ed6f04;
+  --cor2: #afc606;
+  --cor3: #ed6f04;
+  --cor4: #afc606;
+  --cor5: #000;
+  --corF1: #565656;
+  --corF2: #969696;
+  --corF3: #c7c7c7;
+  --gradiente1_1: linear-gradient(45deg, #ffda2e 0%, #afc606 100%);
+  --gradiente1_2: linear-gradient(45deg, #ffda2eb0 0%, #afc606b0 100%);
+  --gradiente2: linear-gradient(0deg, b0 0%, b0 100%);
+  --titulo1: #ed6f04;
+  --titulo2: #ffda2e;
+  --titulo3: #afc606;
+}
+
+body {
+  background-color: var(--cor1);
+}
+
+/* @media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+} */
