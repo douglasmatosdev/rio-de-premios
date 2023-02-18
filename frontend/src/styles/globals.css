@@ -3,6 +3,79 @@
 @tailwind utilities;
 
 @layer components {
+  .svg-icon {
+    width: 20px;
+    height: 20px;
+    background-color: var(--corF1) !important;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+  }
+  .svg-icon.home {
+    -webkit-mask-image: url(../assets/icones/home.svg);
+    mask-image: url(../assets/icones/home.svg);
+  }
+  .svg-icon.trevo {
+    -webkit-mask-image: url(../assets/icones/trevo.svg);
+    mask-image: url(../assets/icones/trevo.svg);
+  }
+  .svg-icon.estrela {
+    -webkit-mask-image: url(../assets/icones/estrela.svg);
+    mask-image: url(../assets/icones/estrela.svg);
+  }
+  .svg-icon.duvida {
+    -webkit-mask-image: url(../assets/icones/duvida.svg);
+    mask-image: url(../assets/icones/duvida.svg);
+  }
+  .svg-icon.carrinho {
+    -webkit-mask-image: url(../assets/icones/carrinho.svg);
+    mask-image: url(../assets/icones/carrinho.svg);
+  }
+  .svg-icon.bilhete {
+    -webkit-mask-image: url(../assets/icones/bilhete.svg);
+    mask-image: url(../assets/icones/bilhete.svg);
+  }
+  .svg-icon.sorteio {
+    -webkit-mask-image: url(../assets/icones/sorteio.svg);
+    mask-image: url(../assets/icones/sorteio.svg);
+  }
+  .svg-icon.bandeirola {
+    -webkit-mask-image: url(../assets/icones/bandeirola.svg);
+    mask-image: url(../assets/icones/bandeirola.svg);
+  }
+  .svg-icon.check {
+    -webkit-mask-image: url(../assets/icones/check.svg);
+    mask-image: url(../assets/icones/check.svg);
+  }
+  .svg-icon.arquivo {
+    -webkit-mask-image: url(../assets/icones/arquivo.svg);
+    mask-image: url(../assets/icones/arquivo.svg);
+  }
+  .svg-icon.check2 {
+    -webkit-mask-image: url(../assets/icones/check2.svg);
+    mask-image: url(../assets/icones/check2.svg);
+  }
+  .svg-icon.info {
+    -webkit-mask-image: url(../assets/icones/info.svg);
+    mask-image: url(../assets/icones/info.svg);
+  }
+  .svg-icon.duvida {
+    -webkit-mask-image: url(../assets/icones/duvida.svg);
+    mask-image: url(../assets/icones/duvida.svg);
+  }
+
+  .svg-icon.mensagens {
+    -webkit-mask-image: url(../assets/icones/mensagens.svg);
+    mask-image: url(../assets/icones/mensagens.svg);
+  }
+  .svg-icon.mensagem {
+    -webkit-mask-image: url(../assets/icones/mensagem.svg);
+    mask-image: url(../assets/icones/mensagem.svg);
+  }
+
   .bg-logo {
     -webkit-mask-image: url(../assets/icones/menu.svg);
     mask-image: url(../assets/icones/menu.svg);

@@ -3,12 +3,19 @@ import Image from "next/image";
 
 import * as Toolbar from "@radix-ui/react-toolbar";
 
-export function Header() {
+interface HeaderProps {
+  onClick: () => void;
+}
+
+export function Header({ onClick }: HeaderProps) {
   return (
     <Toolbar.Root>
       <header className="flex justify-between items-center h-[115px] w-full">
         <div className="flex justify-center items-center mx-5 my-0">
-          <Toolbar.Button className="bg-logo w-10 h-10 bg-white" />
+          <Toolbar.Button
+            onClick={onClick}
+            className="bg-logo w-10 h-10 bg-white"
+          />
         </div>
         <div className="bg-curva-topo">
           <div className="flex justify-center items-center mb-3">

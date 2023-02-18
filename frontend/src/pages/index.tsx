@@ -9,9 +9,16 @@ import Image from "next/image";
 import { RedesSociais } from "@/components/RedesSociais";
 import { Slider } from "@/components/Slider";
 import { Ticket } from "@/components/Ticket";
+import { SideMenu } from "@/components/SideMenu";
+import { Overlay } from "@/components/Overlay";
+import { useState } from "react";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const [show, setShow] = useState(false);
+
+  const handleShow = () => setShow(!show);
+
   return (
     <>
       <Head>
@@ -20,9 +27,13 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <aside>
+        {show && <Overlay onClick={handleShow} />}
+        <SideMenu show={show} />
+      </aside>
       <main className="bg-gradient-1 h-max">
         <StyleEffects effect="raios">
-          <Header />
+          <Header onClick={handleShow} />
           <div className="w-full h-full flex-col items-center justify-center px-6">
             <div className="flex flex-col justify-center items-center">
               <Paragraph
