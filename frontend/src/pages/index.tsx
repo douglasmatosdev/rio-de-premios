@@ -8,6 +8,7 @@ import { Paragraph } from "@/components/Paragraph";
 import Image from "next/image";
 import { RedesSociais } from "@/components/RedesSociais";
 import { Slider } from "@/components/Slider";
+import { Ticket } from "@/components/Ticket";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -86,17 +87,7 @@ export default function Home() {
                 <span>*imagens meramente ilustrativas</span>
               </div>
 
-              <Button
-                background="var(--cor4)"
-                text="Comprar e concorrer"
-                color="white"
-              />
-
-              <Button
-                background="var(--cor1)"
-                text="Cadastrar Bilhete"
-                color="white"
-              />
+              <Ticket />
             </div>
           </div>
         </StyleEffects>
