@@ -3,6 +3,28 @@
 @tailwind utilities;
 
 @layer components {
+  .input-focus {
+    @apply before:content-[attr(datatype)] before:absolute before:transition-transform group-focus-within:text-blue-500 group-focus-within:before:text-blue-500 group-focus-within:before:text-[12px] group-focus-within:before:-top-4 group-focus-within:after:border-blue-500;
+  }
+  .input-leave {
+    @apply after:text-red-600 after:border-red-600 after:border-[2px];
+  }
+  .border-input {
+    @apply after:absolute after:-bottom-1 after:left-0 after:w-full after:content-[""] after:border-l-0 after:border-r-0 after:border-t-[1px] after:border-gray-800;
+  }
+  /*
+  .border-input::after {
+    bottom: -4px;
+    content: "";
+    left: 0;
+    position: absolute;
+    transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
+    width: 100%;
+    border-color: rgba(0, 0, 0, 0.42);
+    border-style: solid;
+    border-width: thin 0 0;
+  }
+*/
   .svg-icon {
     width: 20px;
     height: 20px;
@@ -80,6 +102,11 @@
     -webkit-mask-image: url(../assets/icones/menu.svg);
     mask-image: url(../assets/icones/menu.svg);
   }
+
+  .mandatory {
+    color: red;
+  }
+
   .raios {
     background-image: url(../assets/images/efeitos/efeito_raios.png);
     background-position-x: center;
@@ -106,7 +133,6 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  color: #fff;
 }
 
 html,

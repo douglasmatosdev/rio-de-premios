@@ -20,9 +20,10 @@ const listMenu = [
 
 interface SideMenuProps {
   show: boolean;
+  onClick: () => void;
 }
 
-export const SideMenu = ({ show }: SideMenuProps) => {
+export const SideMenu = ({ show, onClick }: SideMenuProps) => {
   return (
     <div
       className={`w-[265px] h-full shadow-md bg-white absolute z-10 transition-all ease-in-out duration-500 ${
@@ -31,6 +32,7 @@ export const SideMenu = ({ show }: SideMenuProps) => {
     >
       <div className="flex justify-evenly items-center bg-[var(--cor3)] h-16">
         <Button
+          onClick={onClick}
           className="w-[106px] h-[32px] text-sm"
           background="var(--cor2)"
           text={"Entrar"}

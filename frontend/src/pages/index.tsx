@@ -12,12 +12,22 @@ import { Ticket } from "@/components/Ticket";
 import { SideMenu } from "@/components/SideMenu";
 import { Overlay } from "@/components/Overlay";
 import { useState } from "react";
-const inter = Inter({ subsets: ["latin"] });
+import { FormLogin } from "@/components/FormLogin";
+
+// const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  const [show, setShow] = useState(false);
+  const [showSideMenu, setShowSideMenu] = useState(false);
+  const [showFormLogin, setShowFormLogin] = useState(false);
 
-  const handleShow = () => setShow(!show);
+  const handleShow = () => {
+    setShowSideMenu(!showSideMenu);
+    setShowFormLogin(false);
+  };
+  const handleShowLogin = () => {
+    setShowFormLogin(!showFormLogin);
+    setShowSideMenu(false);
+  };
 
   return (
     <>
@@ -27,9 +37,10 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      {showFormLogin && <FormLogin />}
       <aside>
-        {show && <Overlay onClick={handleShow} />}
-        <SideMenu show={show} />
+        {showSideMenu && <Overlay onClick={handleShow} />}
+        <SideMenu onClick={handleShowLogin} show={showSideMenu} />
       </aside>
       <main className="bg-gradient-1 h-max">
         <StyleEffects effect="raios">
