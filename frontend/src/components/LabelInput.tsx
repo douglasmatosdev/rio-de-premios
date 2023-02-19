@@ -82,7 +82,7 @@ export const LabelInput = ({
             value !== "" || inputState[name].warning
               ? "before:-top-4 before:text-[12px] before:text-red-600"
               : ""
-          } before:pointer-events-none input-focus relative duration-500 border-input before:border-2 ${
+          } before:pointer-events-none input-focus relative duration-500 border-input ${
             inputState[name].warning
               ? "input-leave"
               : inputState[name].focus
