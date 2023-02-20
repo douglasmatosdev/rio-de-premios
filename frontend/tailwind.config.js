@@ -10,6 +10,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        error: "#ff5252",
+        focus: "#1976d2",
+      },
       animation: {
         marquee: "marquee 6.3s linear infinite",
       },

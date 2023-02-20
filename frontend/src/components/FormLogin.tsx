@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { LabelInput } from "./LabelInput";
 import { Icon } from "@iconify/react";
+import { Button } from "./Button";
 
 interface FormLoginProps {}
 export type InputTypes = "cpf" | "senha";
@@ -22,8 +23,8 @@ export const FormLogin = ({}: FormLoginProps) => {
   });
 
   return (
-    <div className="w-full h-64 min-h-[100px] p-2 mb-10 flex flex-col bg-white absolute top-28">
-      <span className="text-[var(--corF1)] text-center text-2xl">
+    <div className="w-full h-full min-h-[200px] max-h-[550px] p-2 mb-10 flex flex-col bg-white absolute top-28">
+      <span className="text-[var(--corF1)] text-center text-2xl mt-6">
         Entre ou cadastre-se para participar!
       </span>
 
@@ -49,6 +50,18 @@ export const FormLogin = ({}: FormLoginProps) => {
           onClick={() => setShowPassword(!showPassword)}
           className="absolute right-2 bottom-0 text-[24px] text-[var(--corF1)] opacity-[0.85]"
         />
+      </div>
+
+      <div className="flex flex-col items-center w-full h-full">
+        <Button
+          background="#000"
+          text="Entrar"
+          className="w-full min-w-[64px] max-w-[258px] max-h-[100px] min-h-[10px] h-5 text-sm mt-2 rounded-xl"
+        />
+
+        <a href="#!" className="underline mt-2">
+          Esqueci a senha
+        </a>
       </div>
     </div>
   );

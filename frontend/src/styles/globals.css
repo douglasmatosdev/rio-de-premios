@@ -3,28 +3,19 @@
 @tailwind utilities;
 
 @layer components {
-  .input-focus {
-    @apply before:content-[attr(datatype)] before:absolute before:transition-transform group-focus-within:text-blue-500 group-focus-within:before:text-blue-500 group-focus-within:before:text-[12px] group-focus-within:before:-top-4 group-focus-within:after:border-blue-500;
+  .fake-placeholder {
+    @apply before:content-[attr(datatype)] before:absolute before:transition-transform group-focus-within:before:text-focus group-focus-within:before:text-[12px] group-focus-within:before:-top-4;
   }
   .input-leave {
-    @apply after:text-red-600 after:border-red-600 after:border-[2px];
+    @apply after:text-error after:border-error after:border-[1px];
   }
   .border-input {
-    @apply after:absolute after:-bottom-1 after:left-0 after:w-full after:content-[""] after:border-l-0 after:border-r-0 after:border-t-[1px] after:border-gray-800;
+    @apply after:absolute after:-bottom-1 after:left-0 after:w-full after:content-[""] after:border-l-0 after:border-r-0 after:border-t-[1px] group-focus-within:after:border-t-[2px] after:border-gray-800 group-focus-within:after:border-focus;
   }
-  /*
-  .border-input::after {
-    bottom: -4px;
-    content: "";
-    left: 0;
-    position: absolute;
-    transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
-    width: 100%;
-    border-color: rgba(0, 0, 0, 0.42);
-    border-style: solid;
-    border-width: thin 0 0;
+  .border-input-leave {
+    @apply after:absolute after:-bottom-1 after:left-0 after:w-full after:content-[""] after:border-l-0 after:border-r-0 after:border-t-[1px] after:border-error;
   }
-*/
+
   .svg-icon {
     width: 20px;
     height: 20px;

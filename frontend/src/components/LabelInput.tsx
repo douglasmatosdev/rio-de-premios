@@ -1,7 +1,6 @@
 import React, { use, useRef, useState } from "react";
 import { Icon } from "@iconify/react";
-import OutsideClickHandler from "react-outside-click-handler";
-import { InputState, InputStateItem, InputTypes } from "./FormLogin";
+import { InputState, InputTypes } from "./FormLogin";
 
 interface LabelInputProps {
   label: string;
@@ -57,7 +56,6 @@ export const LabelInput = ({
       },
     });
   };
-  console.log(inputState[name]);
 
   return (
     <div className="flex flex-col w-full h-full">
@@ -67,27 +65,17 @@ export const LabelInput = ({
             <Icon
               icon={`mdi:${icon}`}
               className={` ${
-                inputState[name].warning
-                  ? "text-red-600"
-                  : inputState[name].focus
-                  ? "input-focus"
-                  : "text-[var(--corF1)]"
-              }  text-[24px] opacity-1`}
+                inputState[name].warning ? "text-error" : ""
+              } text-[var(--corF1)] group-focus-within:text-focus  text-[24px] opacity-1`}
             />
           </div>
         )}
         <div
           datatype={label}
           className={`${
-            value !== "" || inputState[name].warning
-              ? "before:-top-4 before:text-[12px] before:text-red-600"
-              : ""
-          } before:pointer-events-none input-focus relative duration-500 border-input ${
-            inputState[name].warning
-              ? "input-leave"
-              : inputState[name].focus
-              ? "input-focus"
-              : "border-input"
+            inputState[name].warning ? "before:text-error" : ""
+          } before:pointer-events-none fake-placeholder relative border-input duration-500 ${
+            inputState[name].warning ? "border-input-leave" : ""
           }   w-full`}
         >
           <input
@@ -105,7 +93,7 @@ export const LabelInput = ({
             inputState[name].warning ? "-bottom-6 h-3" : "-bottom-3 h-0"
           } text-[12px] overflow-hidden leading-3 absolute left-[36px] transition-all duration-700`}
         >
-          <span className="">{warnMessage}</span>
+          <span className="text-error">{warnMessage}</span>
         </div>
       </div>
     </div>
