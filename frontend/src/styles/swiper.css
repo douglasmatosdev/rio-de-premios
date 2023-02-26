@@ -35,3 +35,8 @@
   width: 28px !important;
   height: 28px !important;
 }
+
+.swiper-button-next,
+.swiper-button-prev {
+  display: none !important;
+}
