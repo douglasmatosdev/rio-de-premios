@@ -7,6 +7,7 @@ interface ButtonProps {
   style?: React.CSSProperties;
   className?: string;
   onClick?: () => void;
+  children?: React.ReactNode;
 }
 
 export function Button({
@@ -16,6 +17,7 @@ export function Button({
   style = {},
   className = "",
   onClick,
+  children,
 }: ButtonProps) {
   return (
     <button
@@ -23,7 +25,7 @@ export function Button({
       style={{ ...style, backgroundColor: background, color: color }}
       className={`${className} text-center p-4 rounded-2xl h-10 will-change-[box-shadow] shadow-button flex items-center justify-center tracking-[.0892857143em]`}
     >
-      {text}
+      {text || children}
     </button>
   );
 }
